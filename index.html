@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ghaith Alayah | غيث علاية - IoT & Web Developer</title>
+
+    <meta name="description"
+        content="الموقع الرسمي للمبرمج غيث علاية (Ghaith Alayah). طالب IT ومطور متخصص في إنترنت الأشياء (IoT) وتطوير المواقع. شاهد أعمالي وتواصل معي.">
+
+    <meta name="keywords"
+        content="غيث علاية, Ghaith Alayah, Ghaith Abdo, مبرمج يمني, IoT Developer, Web Developer, صنعاء, Portfolio">
+
+    <meta name="author" content="Ghaith Alayah">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">غيث.</a>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">عني</a></li>
+                <li><a href="#portfolio">أعمالي</a></li>
+                <li><a href="#contact">تواصل معي</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h3>مرحباً، أنا</h3>
+                <h1>غيث علاية | Ghaith Alayah</h1>
+                <h2>طالب IT 👨‍💻 مبرمج تطبيقات ومواقع</h2>
+                <!-- moved status/offer text to Education section as requested -->
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    متاح لمشاريع جديدة (Open to Work)
+                </div>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn btn-primary">شاهد أعمالي</a>
+                    <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <!-- استبدل src برابط صورتك -->
+                <img src="images/profile.jpg" alt="غيث عبدة ناجي علاية">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">من أنا</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>التعليم</h3>
+                    <p>طالب في كلية تكنولوجيا المعلومات (IT). شغوف بتعلم كل ما هو جديد في عالم البرمجة.</p>
+                    <p>🚀 أساعدك تحوّل فكرتك إلى مشروع رقمي جاهز</p>
+                    <p>📱 تطبيقات | 🌐 مواقع | 🧩 أنظمة أعمال</p>
+                    <p>أبحث حالياً عن فرصة تدريب أو مشاريع برمجية لتطوير مهاراتي والمساهمة في نجاح فريقكم.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-code"></i>
+                    <h3>المهارات</h3>
+                    <ul class="skills-list">
+                        <li>HTML5 / CSS</li>
+                        <li>JavaScript</li>
+                        <li>Laravel</li>
+                        <li>REST APIs</li>
+                        <li>MySQL / SQLite</li>
+                        <li>PhpMyAdmin</li>
+                        <li>Flutter & Dart</li>
+                        <li>C++</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>الشهادات والدورات</h3>
+                    <div class="certificates-gallery">
+                        <div class="cert-thumbnail"
+                            onclick="openImageModal('images/1.png', '01 - Programming Foundations - Level 1')">
+                            <img src="images/1.png" alt="01 - Programming Foundations - Level 1">
+                            <span>01 - Programming Foundations - Level 1</span>
+                        </div>
+                        <div class="cert-thumbnail"
+                            onclick="openImageModal('images/2.png', '02 - Algorithms & Problem-Solving Level 1')">
+                            <img src="images/2.png" alt="02 - Algorithms & Problem-Solving Level 1">
+                            <span>02 - Algorithms & Problem-Solving Level 1</span>
+                        </div>
+                        <div class="cert-thumbnail"
+                            onclick="openImageModal('images/3.png', '03 - Programming Using C++ - Level 1')">
+                            <img src="images/3.png" alt="03 - Programming Using C++ - Level 1">
+                            <span>03 - Programming Using C++ - Level 1</span>
+                        </div>
+                        <div class="cert-thumbnail"
+                            onclick="openImageModal('images/4.png', '04 - Algorithms & Problem-Solving Level 1 Solutions')">
+                            <img src="images/4.png" alt="04 - Algorithms & Problem-Solving Level 1 Solutions">
+                            <span>04 - Algorithms & Problem-Solving Level 1 Solutions</span>
+                        </div>
+                    </div>
+                    <div class="certificates-list" style="text-align: right; margin-top: 1rem;">
+                        <div class="cert-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>ProgrammingAdvices</strong> - 5 كورسات مكتملة</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-spinner"></i>
+                            <span><strong>Coursera</strong> - قيد الدراسة</span>
+                        </div>
+                    </div>
+                    <div class="cert-note-container">
+                        <p class="cert-note">🎯 في طريقي لإكمال جميع الكورسات بإذن الله</p>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <button class="btn btn-primary" onclick="openModal('certificatesModal')">عرض الشهادات</button>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>الخبرة</h3>
+                    <p>عملت على العديد من المشاريع الأكاديمية والشخصية، وأسعى دائماً لتطوير مهاراتي من خلال المشاريع
+                        الحقيقية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">معرض الأعمال</h2>
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/300x200" alt="تطبيق إدارة مهام ومواد الطلاب الذكي">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>تطبيق إدارة مهام ومواد الطلاب الذكي</h3>
+                        <p>تطبيق متكامل لإدارة المهام الأكاديمية والمواد الدراسية باستخدام Flutter و Laravel.</p>
+                        <button class="btn-small" onclick="openModal('project1')">عرض التفاصيل</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project1')">&times;</span>
+            <div class="modal-header">
+                <h2>تطبيق إدارة مهام ومواد الطلاب الذكي</h2>
+                <p class="project-subtitle">Smart Student Task and Subject Management Application</p>
+                <span class="project-status">🚧 قيد التطوير</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="project-section">
+                    <h3><i class="fas fa-info-circle"></i> نظرة عامة</h3>
+                    <p>يهدف هذا المشروع إلى معالجة التحديات المتزايدة التي يواجهها الطلاب في إدارة أعبائهم الأكاديمية
+                        المتعددة، والتي تشمل تتبع المهام، تنظيم المواد الدراسية، والالتزام بمواعيد التسليم. يوفر التطبيق
+                        منصة موحدة وفعالة تجمع بين التخطيط الأكاديمي، والتواصل مع المشرفين، وإدارة الموارد التعليمية.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3><i class="fas fa-bullseye"></i> الهدف من المشروع</h3>
+                    <p>معالجة تشتت الجهد وتأخر التسليم وانخفاض الأداء الأكاديمي من خلال توفير أداة موحدة للطلاب تساعدهم
+                        على:</p>
+                    <ul>
+                        <li>تتبع المهام والواجبات الدراسية</li>
+                        <li>تنظيم المواد الدراسية بشكل فعال</li>
+                        <li>الالتزام بمواعيد التسليم</li>
+                        <li>التواصل المباشر مع المشرفين والمدرسين</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3><i class="fas fa-code"></i> التقنيات المستخدمة</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-flutter"></i>
+                            <h4>Flutter</h4>
+                            <p>تطوير تطبيق الجوال لنظامي Android و iOS</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-laravel"></i>
+                            <h4>Laravel (PHP)</h4>
+                            <p>تطوير الواجهة الخلفية وواجهة API</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <h4>SQLite / PostgreSQL</h4>
+                            <p>قاعدة البيانات لتخزين البيانات</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Laravel Sanctum</h4>
+                            <p>نظام المصادقة وتأمين الاتصال</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h3><i class="fas fa-tasks"></i> منهجية التطوير</h3>
+                    <p>يتم تنفيذ المشروع باستخدام <strong>منهجية Agile/Scrum</strong> مع دورات تطوير قصيرة (Sprints)
+                        مدتها أسبوعان، لضمان التغذية الراجعة المستمرة من المستخدمين والتكيف مع المتطلبات المتغيرة.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> نطاق التنفيذ</h3>
+                    <p><strong>المرحلة التجريبية:</strong> صنعاء / الحضارة</p>
+                    <p>سيتم التركيز على منطقة جغرافية واحدة في مرحلة الاختبار الأولي لضمان سهولة جمع التغذية الراجعة
+                        والدعم الفني المباشر. بعد نجاح المرحلة التجريبية، سيتم التوسع إلى نطاق عالمي عبر النشر على متاجر
+                        التطبيقات.</p>
+                </div>
+
+                <div class="project-section">
+                    <h3><i class="fas fa-users"></i> المستفيدون</h3>
+                    <ul>
+                        <li><strong>الطلاب:</strong> المستخدمون الرئيسيون للتطبيق</li>
+                        <li><strong>المشرفون والمدرسون:</strong> لإرسال المهام والتواصل مع الطلاب</li>
+                        <li><strong>المؤسسات التعليمية:</strong> الجهة المالكة والمستفيد الرئيسي</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificates Modal -->
+    <div id="certificatesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('certificatesModal')">&times;</span>
+            <div class="modal-header">
+                <h2>شهاداتي ودوراتي</h2>
+                <p class="project-subtitle">عرض الشهادات المكتملة والقابلة للمشاركة</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <img src="images/1.png" alt="01 - Programming Foundations - Level 1">
+                        <h4>01 - Programming Foundations - Level 1</h4>
+                        <p class="cert-meta">ProgrammingAdvices</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('1.png', '01 - Programming Foundations - Level 1')">عرض</button>
+                            <a href="1.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/2.png" alt="02 - Algorithms & Problem-Solving Level 1">
+                        <h4>02 - Algorithms & Problem-Solving Level 1</h4>
+                        <p class="cert-meta">ProgrammingAdvices</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('2.png', '02 - Algorithms & Problem-Solving Level 1')">عرض</button>
+                            <a href="2.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/3.png" alt="03 - Programming Using C++ - Level 1">
+                        <h4>03 - Programming Using C++ - Level 1</h4>
+                        <p class="cert-meta">Coursera</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('3.png', '03 - Programming Using C++ - Level 1')">عرض</button>
+                            <a href="3.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/4.png" alt="04 - Algorithms & Problem-Solving Level 1 Solutions">
+                        <h4>04 - Algorithms & Problem-Solving Level 1 Solutions</h4>
+                        <p class="cert-meta">مصدر</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('4.png', '04 - Algorithms & Problem-Solving Level 1 Solutions')">عرض</button>
+                            <a href="4.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal image-modal">
+        <span class="close" onclick="closeModal('imageModal')">&times;</span>
+        <img class="modal-content-img" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معي</h2>
+            <div class="contact-content">
+                <div class="contact-links">
+                    <a href="mailto:ghaithalayah2005@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ghaithalayah2005@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/ghaith-alayah-dev" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/ghaithalayah2005-dev" target="_blank" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100081855147952" target="_blank"
+                        class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://wa.me/967770253361" target="_blank" class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://t.me/Ghaith_Alayah" target="_blank" class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://www.instagram.com/gh1_70a" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2025 - غيث عبدة ناجي علاية</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // الاستماع لحركة الماوس على الصفحة كاملة
+        document.addEventListener('mousemove', (e) => {
+            // الحصول على إحداثيات الماوس الأفقية والعمودية
+            const x = e.clientX;
+            const y = e.clientY;
+
+            // تحديث متغيرات الـ CSS بهذه الإحداثيات فوراً
+            document.body.style.setProperty('--cursor-x', x + 'px');
+            document.body.style.setProperty('--cursor-y', y + 'px');
+        });
+    </script>
+</body>
+
+</html>
