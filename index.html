@@ -16,12 +16,10 @@
     <meta name="author" content="Ghaith Alayah">
 
     <link rel="stylesheet" href="style.css">
-    <meta name="google-site-verification" content="sIhaOj4mWO4zGFA6Z9JliZuTIv_FCglr-xlcTwKiWNw" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/jpg" href="images/unnamed.jpg">
 </head>
 
 <body>
@@ -29,15 +27,22 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">غيث.</a>
+            <a href="#" class="logo" aria-label="logo"></a>
             <ul class="nav-links">
                 <li><a href="#home">الرئيسية</a></li>
                 <li><a href="#about">عني</a></li>
+                <li><a href="#services">الخدمات</a></li>
                 <li><a href="#portfolio">أعمالي</a></li>
                 <li><a href="#contact">تواصل معي</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <!-- Date / Time display -->
+            <div id="date-time" class="nav-time" aria-live="polite">&nbsp;</div>
+
+            <!-- Mobile menu toggle (Hamburger) -->
+            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
@@ -48,7 +53,14 @@
             <div class="hero-text">
                 <h3>مرحباً، أنا</h3>
                 <h1>غيث علاية | Ghaith Alayah</h1>
-                <h2>طالب IT 👨‍💻 مبرمج تطبيقات ومواقع</h2>
+                <h2>مطور تطبيقات (Flutter) ومواقع ويب 📱💻</h2>
+
+                <p>
+                    طالب IT شغوف ببناء تطبيقات الهواتف الذكية باستخدام Flutter،
+                    وتطوير مواقع ويب عصرية وسريعة الاستجابة.
+                    أحول الأفكار إلى تطبيقات حقيقية تعمل على Android و iOS والويب.
+                </p>
+                <br>
                 <!-- moved status/offer text to Education section as requested -->
                 <div class="status-badge">
                     <span class="pulse-dot"></span>
@@ -89,6 +101,7 @@
                         <li>REST APIs</li>
                         <li>MySQL / SQLite</li>
                         <li>PhpMyAdmin</li>
+                        <li>GitHub</li>
                         <li>Flutter & Dart</li>
                         <li>C++</li>
                         <li>Problem Solving</li>
@@ -146,6 +159,34 @@
         </div>
     </section>
 
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">مجالاتي التقنية</h2>
+            <div class="services-container">
+
+                <div class="service-card">
+                    <i class="fab fa-android icon"></i>
+                    <h3>تطبيقات الجوال (Flutter)</h3>
+                    <p>بناء تطبيقات احترافية تعمل على نظامي Android و iOS بكود واحد (Cross-platform) بأداء عالي وتصميم
+                        جذاب.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-laptop-code icon"></i>
+                    <h3>تطوير واجهات الويب</h3>
+                    <p>تصميم وبناء مواقع ويب متجاوبة (Responsive) باستخدام أحدث التقنيات لضمان أفضل تجربة للمستخدم.</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-rocket icon"></i>
+                    <h3>تحويل الأفكار لمنتجات</h3>
+                    <p>مساعدتك في تحويل فكرتك النظرية إلى نموذج أولي (Prototype) أو تطبيق كامل جاهز للنشر.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
@@ -153,13 +194,12 @@
             <div class="portfolio-grid">
                 <!-- Project 1 -->
                 <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="https://via.placeholder.com/300x200" alt="تطبيق إدارة مهام ومواد الطلاب الذكي">
-                    </div>
+
                     <div class="portfolio-info">
-                        <h3>تطبيق إدارة مهام ومواد الطلاب الذكي</h3>
+                        <h3>نظام اداره مهام ومواد الطال ب الذكي</h3>
                         <p>تطبيق متكامل لإدارة المهام الأكاديمية والمواد الدراسية باستخدام Flutter و Laravel.</p>
                         <button class="btn-small" onclick="openModal('project1')">عرض التفاصيل</button>
+                        <button class="btn-small" onclick="openModal('projectImagesModal')">عرض صور المشروع</button>
                     </div>
                 </div>
             </div>
@@ -266,8 +306,8 @@
                         <p class="cert-meta">ProgrammingAdvices</p>
                         <div class="cert-actions">
                             <button class="btn-small"
-                                onclick="openImageModal('1.png', '01 - Programming Foundations - Level 1')">عرض</button>
-                            <a href="1.png" download class="btn-small">تحميل</a>
+                                onclick="openImageModal('images/1.png', '01 - Programming Foundations - Level 1')">عرض</button>
+                            <a href="images/1.png" download class="btn-small">تحميل</a>
                         </div>
                     </div>
 
@@ -277,8 +317,8 @@
                         <p class="cert-meta">ProgrammingAdvices</p>
                         <div class="cert-actions">
                             <button class="btn-small"
-                                onclick="openImageModal('2.png', '02 - Algorithms & Problem-Solving Level 1')">عرض</button>
-                            <a href="2.png" download class="btn-small">تحميل</a>
+                                onclick="openImageModal('images/2.png', '02 - Algorithms & Problem-Solving Level 1')">عرض</button>
+                            <a href="images/2.png" download class="btn-small">تحميل</a>
                         </div>
                     </div>
 
@@ -288,8 +328,8 @@
                         <p class="cert-meta">Coursera</p>
                         <div class="cert-actions">
                             <button class="btn-small"
-                                onclick="openImageModal('3.png', '03 - Programming Using C++ - Level 1')">عرض</button>
-                            <a href="3.png" download class="btn-small">تحميل</a>
+                                onclick="openImageModal('images/3.png', '03 - Programming Using C++ - Level 1')">عرض</button>
+                            <a href="images/3.png" download class="btn-small">تحميل</a>
                         </div>
                     </div>
 
@@ -299,8 +339,8 @@
                         <p class="cert-meta">مصدر</p>
                         <div class="cert-actions">
                             <button class="btn-small"
-                                onclick="openImageModal('4.png', '04 - Algorithms & Problem-Solving Level 1 Solutions')">عرض</button>
-                            <a href="4.png" download class="btn-small">تحميل</a>
+                                onclick="openImageModal('images/4.png', '04 - Algorithms & Problem-Solving Level 1 Solutions')">عرض</button>
+                            <a href="images/4.png" download class="btn-small">تحميل</a>
                         </div>
                     </div>
                 </div>
@@ -313,6 +353,125 @@
         <span class="close" onclick="closeModal('imageModal')">&times;</span>
         <img class="modal-content-img" id="img01">
         <div id="caption"></div>
+    </div>
+
+    <!-- Project Images Modal (uses same styling as certificates) -->
+    <div id="projectImagesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('projectImagesModal')">&times;</span>
+            <div class="modal-header">
+                <h2>صور المشروع</h2>
+                <p class="project-subtitle">معاينة صور التطبيق</p>
+            </div>
+
+            <div class="modal-body">
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <img src="images/app.png" alt="App Screenshot 1">
+                        <h4>شاشة التطبيق 1</h4>
+                        <p class="cert-meta">واجهة المستخدم</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/app.png', 'شاشة التطبيق 1')">عرض</button>
+                            <a href="images/app.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/app1.png" alt="App Screenshot 2">
+                        <h4>شاشة التطبيق 2</h4>
+                        <p class="cert-meta">قائمة الوظائف</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/app1.png', 'شاشة التطبيق 2')">عرض</button>
+                            <a href="images/app1.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/app2.png" alt="App Screenshot 3">
+                        <h4>شاشة التطبيق 3</h4>
+                        <p class="cert-meta">قائمة المواد</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/app2.png', 'شاشة التطبيق 3')">عرض</button>
+                            <a href="images/app2.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/app3.png" alt="App Screenshot 4">
+                        <h4>شاشة التطبيق 4</h4>
+                        <p class="cert-meta">لوحة التحكم</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/app3.png', 'شاشة التطبيق 4')">عرض</button>
+                            <a href="images/app3.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/app4.png" alt="App Screenshot 5">
+                        <h4>شاشة التطبيق 5</h4>
+                        <p class="cert-meta">سجل المهام</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/app4.png', 'شاشة التطبيق 5')">عرض</button>
+                            <a href="images/app4.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/app5.png" alt="App Screenshot 6">
+                        <h4>شاشة التطبيق 6</h4>
+                        <p class="cert-meta">تفاصيل المهمة</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/app5.png', 'شاشة التطبيق 6')">عرض</button>
+                            <a href="images/app5.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/app6.png" alt="App Screenshot 7">
+                        <h4>شاشة التطبيق 7</h4>
+                        <p class="cert-meta">مخطط الواجهة</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/app6.png', 'شاشة التطبيق 7')">عرض</button>
+                            <a href="images/app6.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="images/p1.png" alt="App Screenshot 8">
+                        <h4>شاشة التطبيق 8</h4>
+                        <p class="cert-meta">شاشة إضافية</p>
+                        <div class="cert-actions">
+                            <button class="btn-small"
+                                onclick="openImageModal('images/p1.png', 'شاشة التطبيق 8')">عرض</button>
+                            <a href="images/p1.png" download class="btn-small">تحميل</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Gallery Modal -->
+    <div id="projectGalleryModal" class="modal image-modal">
+        <span class="close" onclick="closeModal('projectGalleryModal')">&times;</span>
+        <img class="modal-content-img" id="galleryMainImg">
+        <div id="galleryCaption"></div>
+        <div class="gallery-controls" style="text-align:center; margin-top:10px;">
+            <button class="btn-small" onclick="prevGalleryImage()">سابق</button>
+            <button class="btn-small" onclick="nextGalleryImage()">التالي</button>
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs"
+            style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px;padding:8px;">
+            <!-- thumbnails injected by JS -->
+        </div>
     </div>
 
     <!-- Contact Section -->
@@ -377,6 +536,4 @@
     </script>
 </body>
 
-
 </html>
-

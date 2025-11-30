@@ -85,6 +85,33 @@ ul {
     font-size: 1.5rem;
 }
 
+/* Navbar date/time */
+.nav-time {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(59,130,246,0.06); /* light blue background */
+    border: 1px solid rgba(59,130,246,0.12);
+    margin-inline-start: 12px; /* space from links (RTL aware) */
+}
+
+@media (max-width: 768px) {
+    /* show a compact date/time on mobile */
+    .nav-time {
+        display: inline-block; /* show on small screens */
+        position: absolute;
+        top: 16px;
+        left: 16px; /* place on the left so it doesn't overlap the hamburger (RTL-aware) */
+        font-size: 0.82rem;
+        padding: 4px 8px;
+        border-radius: 6px;
+        background: rgba(59,130,246,0.12);
+        color: var(--primary-color);
+        z-index: 1100;
+    }
+}
+
 .hero-content {
     display: flex;
     align-items: center;
@@ -246,6 +273,123 @@ section {
     font-size: 0.9rem;
 }
 
+/* --- تنسيق قسم المهارات --- */
+.skills-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* يسمح بنزول العناصر للسطر التالي في الجوال */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: #f4f4f4;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* حركة عند مرور الماوس */
+.skill-item:hover {
+    transform: scale(1.1); /* تكبير */
+    background: #eef7ff; /* تغيير لون الخلفية للأزرق الفاتح */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.skill-item .icon {
+    font-size: 2.5rem; /* حجم الأيقونة */
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Services Section */
+.services-section {
+    padding: 3.5rem 0;
+}
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+}
+.service-card {
+    background-color: var(--white);
+    padding: 1.2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(2,6,23,0.06);
+    text-align: right;
+}
+.service-card .icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
+    display: inline-block;
+}
+.service-card h3 {
+    margin-bottom: 0.45rem;
+    color: var(--secondary-color);
+}
+.service-card p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Interactive card effects */
+.service-card {
+    transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms ease, background 180ms ease;
+    cursor: pointer;
+    will-change: transform;
+    outline: none;
+}
+.service-card:focus {
+    box-shadow: 0 12px 30px rgba(37,99,235,0.12);
+    transform: translateY(-8px) scale(1.01);
+}
+.service-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 14px 36px rgba(2,6,23,0.12);
+}
+.service-card:active {
+    transform: translateY(-3px) scale(0.997);
+}
+.service-card .icon {
+    transition: transform 220ms ease, color 220ms ease;
+}
+.service-card:hover .icon,
+.service-card:focus .icon {
+    transform: translateY(-4px);
+    color: var(--accent-color);
+}
+
+/* For touch devices that don't support hover, provide active feedback */
+@media (hover: none) {
+    .service-card:hover {
+        transform: none;
+        box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+    }
+    .service-card:active {
+        transform: translateY(-6px) scale(1.01);
+    }
+}
+
 /* Certificates Gallery */
 .certificates-gallery {
     display: grid;
@@ -354,6 +498,46 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+/* Make .image-only portfolio items span full width and show image only */
+.portfolio-item.image-only {
+    grid-column: 1 / -1; /* span full row */
+}
+.portfolio-item.image-only .portfolio-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+.portfolio-item.image-only .portfolio-info {
+    display: none;
+}
+
+/* Make portfolio images medium size inside their card (centered) */
+.portfolio-item {
+    position: relative;
+}
+
+.portfolio-item .portfolio-img img {
+    /* small centered thumbnail overlapping the top of the card */
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    display: block;
+    margin: -48px auto 12px auto; /* pull up to overlap the card top */
+    border-radius: 12px;
+    border: 6px solid #fff; /* card white border */
+    box-shadow: 0 8px 22px rgba(2,6,23,0.12);
+}
+
+@media (max-width: 768px) {
+    .portfolio-item .portfolio-img img {
+        width: 72px;
+        height: 72px;
+        margin: -36px auto 10px auto;
+        border-radius: 10px;
+    }
 }
 
 .portfolio-item {
@@ -584,13 +768,13 @@ footer p {
 }
 
 .modal-content-img {
-    /* Even smaller card-like certificate preview */
-    max-width: 360px;
-    width: 50%;
-    max-height: 45vh;
+    /* Larger, responsive certificate preview */
+    width: 70%;
+    max-width: 900px; /* limit on very wide screens */
+    max-height: 85vh; /* allow tall images while keeping viewport padding */
     object-fit: contain;
-    border-radius: 6px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+    border-radius: 8px;
+    box-shadow: 0 18px 40px rgba(2,6,23,0.5);
     background: #fff;
 }
 
@@ -696,13 +880,13 @@ footer p {
 .image-modal .modal-content-img {
     margin: auto;
     display: block;
-    width: 50%;
-    max-width: 360px; /* smaller preview for lightbox */
-    max-height: 48vh;
+    width: 70%;
+    max-width: 900px; /* larger preview on desktop */
+    max-height: 85vh;
     object-fit: contain;
     animation: zoomIn 0.22s;
-    border-radius: 6px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    border-radius: 8px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes zoomIn {
@@ -719,12 +903,23 @@ footer p {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 700px;
+    max-width: 900px;
     text-align: center;
-    color: #ccc;
+    color: #e6eefb;
     padding: 10px 0;
-    height: 150px;
-    font-size: 1.2rem;
+    height: auto;
+    font-size: 1.25rem;
+}
+
+/* Make lightbox image full width on small screens */
+@media (max-width: 768px) {
+    .modal-content-img,
+    .image-modal .modal-content-img {
+        width: 92%;
+        max-width: 92%;
+        max-height: 78vh;
+    }
+    #caption { font-size: 1rem; }
 }
 
 .image-modal .close {
@@ -802,6 +997,67 @@ footer p {
 
     .image-modal .modal-content-img {
         width: 100%;
+    }
+}
+
+/* تنسيق زر القائمة (يظهر فقط في الجوال) */
+.menu-toggle {
+    display: none; /* مخفي في الكمبيوتر */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* لون الخطوط */
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* --- إعدادات الجوال (مهم جداً) --- */
+@media screen and (max-width: 768px) {
+    /* إظهار زر القائمة */
+    .menu-toggle {
+        display: flex; 
+        position: absolute;
+        top: 20px;
+        right: 20px; /* مكان الزر يمين أو يسار حسب لغة الموقع */
+        z-index: 1100;
+    }
+
+    /* إخفاء القائمة العادية وتنسيقها لتكون منسدلة */
+    .nav-links { /* تأكد أن هذا هو اسم كلاس القائمة عندك */
+        display: none; /* مخفية افتراضياً */
+        width: 100%;
+        position: absolute;
+        top: 70px; /* تحت الهيدر */
+        left: 0;
+        background-color: white; /* خلفية القائمة */
+        flex-direction: column;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 12px 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* كلاس نضيفه بالجافا سكريبت لإظهار القائمة */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* small animation for open hamburger */
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 

@@ -87,3 +87,53 @@ document.addEventListener('DOMContentLoaded', function () {
     if (caption) caption.innerHTML = '';
     document.body.style.overflow = 'auto';
 });
+
+// Live Arabic date/time in the navbar
+function updateTime() {
+    const now = new Date();
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    const timeString = now.toLocaleDateString('ar-YE', options);
+    const el = document.getElementById('date-time');
+    if (el) el.innerText = timeString;
+}
+
+// update every second and run immediately
+setInterval(updateTime, 1000);
+updateTime();
+
+// Mobile menu toggle behavior
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+            // aria-expanded for accessibility
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', (!expanded).toString());
+            // toggle class for simple animation
+            this.classList.toggle('open');
+        });
+
+        // Close the menu when a nav link is clicked (mobile)
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', function () {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('open');
+                    mobileMenu.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    }
+});
+
